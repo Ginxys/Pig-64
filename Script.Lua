@@ -117,7 +117,7 @@ if not success or not library then
 end
 
 
-local window = library:CreateWindow("Piggy M3GAN Script")
+local window = library:CreateWindow("Pig 64 Script")
 
 window:AddButton({
     text = "Anti Report",
