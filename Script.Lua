@@ -118,6 +118,7 @@ end
 
 
 local window = library:CreateWindow("Pig 64 Script")
+local window2 = library:CreateWindow("Pig 64 NOR Script")
 
 window:AddButton({
     text = "Anti Report",
@@ -137,6 +138,29 @@ window:AddButton({
 end
 })
 
+window2:AddButton({
+    text = "ESP SUS tree",
+    callback = function()
+	for f, g in pairs(game:GetService("Workspace"):GetDescendants()) do
+                if g.Name == "SuspiciousTree" then
+                            local highlight = Instance.new("Highlight", g)
+                            local UI = Instance.new("BillboardGui",g)
+                        UI.Size = UDim2.new(0,1000,0,30)
+                        UI.AlwaysOnTop = true
+                        local Label = Instance.new("TextLabel",g.BillboardGui)
+                        Label.Size = UDim2.new(1,0,1,0)
+                        Label.BackgroundTransparency = 1
+                        Label.TextScaled = true
+                        Label.Text = "SusTree"
+                        Label.TextColor3 = Color3.new(255, 0, 0)
+                        Label.FontFace = Font.new("rbxasset://fonts/families/Oswald.json")
+                        Label.TextStrokeTransparency = 0
+                end
+            end	
+end
+})
+
+
 window:AddToggle({
 	text = "Auto Collect (SUPER OP)",
 	flag = "Auto",
@@ -152,6 +176,96 @@ while _G.af2 do
                 end
             end	
 wait(1)
+end
+end
+end  
+})
+
+window2:AddToggle({
+	text = "Auto kill (bossfight)",
+	flag = "Auto",
+	callback = function(v)
+af2 = v
+_G.af2 = af2
+if af2 == true then
+     for f, g in pairs(game:GetService("ReplicatedStorage"):GetDescendants()) do
+                if g.Name == "DamageBoss" then
+while _G.af2 do
+                                g:FireServer(100)
+                wait(.2)
+end
+                end
+            end	
+--	game:GetService("ReplicatedStorage"):WaitForChild("Source"):WaitForChild("Puzzles"):WaitForChild("Networking"):WaitForChild("__NETWORKINGOBJECTS"):WaitForChild("0085c20b_abda_4fc3_818e_b4cd6361a2a4"):WaitForChild("DamageBoss"):FireServer()
+
+end
+end  
+})
+
+window2:AddToggle({
+	text = "Auto Keys/open (nor level)",
+	flag = "AutoE",
+	callback = function(v)
+af2 = v
+_G.af2 = af2
+if af2 == true then
+while _G.af2 do
+		for i,g in pairs(workspace.Maps.WarehouseChase.MapSetup:GetDescendants()) do
+    if g:IsA("ProximityPrompt") then
+		        fireproximityprompt(g)
+		g.HoldDuration = 0
+        task.wait()
+
+    end
+end
+end
+end
+end  
+})
+
+window2:AddButton({
+	text = "Delete nor damage (nor level)",
+    callback = function()
+    workspace.Maps.WarehouseChase.MapSetup.PatrolAssets.PatrolNPCs.ChaseNor.HumanoidRootPart.CanTouch = false
+    end
+})
+
+
+window2:AddToggle({
+	text = "Auto Dance OP",
+	flag = "Auto",
+	callback = function(v)
+af2 = v
+_G.af2 = af2
+if af2 == true then
+while _G.af2 do
+	local args = {
+	1,
+	"Dance6"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Source"):WaitForChild("Puzzles"):WaitForChild("Part7"):WaitForChild("Darcy"):WaitForChild("Remotes"):WaitForChild("RegisterDance"):InvokeServer(unpack(args))
+local args = {
+	2,
+	"Dance7"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Source"):WaitForChild("Puzzles"):WaitForChild("Part7"):WaitForChild("Darcy"):WaitForChild("Remotes"):WaitForChild("RegisterDance"):InvokeServer(unpack(args))
+local args = {
+	3,
+	"Dance8"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Source"):WaitForChild("Puzzles"):WaitForChild("Part7"):WaitForChild("Darcy"):WaitForChild("Remotes"):WaitForChild("RegisterDance"):InvokeServer(unpack(args))
+local args = {
+	4,
+	"Dance9"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Source"):WaitForChild("Puzzles"):WaitForChild("Part7"):WaitForChild("Darcy"):WaitForChild("Remotes"):WaitForChild("RegisterDance"):InvokeServer(unpack(args))
+local args = {
+	5,
+	"Dance10"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Source"):WaitForChild("Puzzles"):WaitForChild("Part7"):WaitForChild("Darcy"):WaitForChild("Remotes"):WaitForChild("RegisterDance"):InvokeServer(unpack(args))
+
+wait(0.2)
 end
 end
 end  
@@ -257,6 +371,10 @@ end
     end
 })
 
+window:AddLabel({ text = "Credits: YT-Ginxys", type = "label" })
+library:Init()
+
+player.Chatted:Connect(handleCommand)
 window:AddLabel({ text = "Credits: YT-Ginxys", type = "label" })
 library:Init()
 
