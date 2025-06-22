@@ -191,12 +191,11 @@ if af2 == true then
      for f, g in pairs(game:GetService("ReplicatedStorage"):GetDescendants()) do
                 if g.Name == "DamageBoss" then
 while _G.af2 do
-                                g:FireServer(100)
-                wait(.2)
+                                g:FireServer()
+                wait(.5)
 end
                 end
             end	
---	game:GetService("ReplicatedStorage"):WaitForChild("Source"):WaitForChild("Puzzles"):WaitForChild("Networking"):WaitForChild("__NETWORKINGOBJECTS"):WaitForChild("0085c20b_abda_4fc3_818e_b4cd6361a2a4"):WaitForChild("DamageBoss"):FireServer()
 
 end
 end  
