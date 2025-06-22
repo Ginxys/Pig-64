@@ -213,7 +213,7 @@ while _G.af2 do
     if g:IsA("ProximityPrompt") then
 		        fireproximityprompt(g)
 		g.HoldDuration = 0
-        task.wait()
+        task.wait(.3)
 
     end
 end
