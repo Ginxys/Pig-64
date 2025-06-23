@@ -195,12 +195,13 @@ af2 = v
 _G.af2 = af2
 if af2 == true then
      local bosspath2
-     for f, g in pairs(game:GetService("ReplicatedStorage"):GetDescendants()) do
-                if g.Name == "DamageBoss" then
-                    bosspath = g
+    -- game:GetService("ReplicatedStorage"):WaitForChild("Source"):WaitForChild("Puzzles"):WaitForChild("Networking"):WaitForChild("__NETWORKINGOBJECTS"):WaitForChild("656eb4ae_efc1_408b_a25c_614a7bfd6056"):WaitForChild("DamageBoss"):FireServer()
 while _G.af2 do
+     for f, g in pairs(game:GetService("ReplicatedStorage").Source.Puzzles.Networking.__NETWORKINGOBJECTS:GetDescendants()) do
+                if g.Name == "DamageBoss" then
+                   -- bosspath = g
                                 g:FireServer()
-                                bosspath:FireServer()
+                            --    bosspath:FireServer()
                 wait(.5)
 end
                 end
@@ -211,19 +212,20 @@ end
 })
 
 window2:AddToggle({
-	text = "Auto kill NOR (Mobile)",
+	text = "Auto kill (2)",
 	flag = "Auto",
 	callback = function(v)
-af23 = v
-_G.af23 = af23
-if af23 == true then
-    local bosspath
-     for f, g in pairs(game:GetService("ReplicatedStorage"):GetDescendants()) do
+af2 = v
+_G.af2 = af2
+if af2 == true then
+     local bosspath2
+    -- game:GetService("ReplicatedStorage"):WaitForChild("Source"):WaitForChild("Puzzles"):WaitForChild("Networking"):WaitForChild("__NETWORKINGOBJECTS"):WaitForChild("656eb4ae_efc1_408b_a25c_614a7bfd6056"):WaitForChild("DamageBoss"):FireServer()
+while _G.af2 do
+     for f, g in pairs(game:GetService("ReplicatedStorage").Source.Puzzles.Networking.__NETWORKINGOBJECTS:GetDescendants()) do
                 if g.Name == "DamageBoss" then
-                    bosspath = g
-while _G.af23 do
-bosspath:Fireserver()
-g:Fireserver()
+                   -- bosspath = g
+                                g:Fireserver()
+                            --    bosspath:FireServer()
                 wait(.5)
 end
                 end
