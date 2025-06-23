@@ -194,10 +194,36 @@ window2:AddToggle({
 af2 = v
 _G.af2 = af2
 if af2 == true then
+     local bosspath2
      for f, g in pairs(game:GetService("ReplicatedStorage"):GetDescendants()) do
                 if g.Name == "DamageBoss" then
+                    bosspath = g
 while _G.af2 do
                                 g:FireServer()
+                                bosspath:FireServer()
+                wait(.5)
+end
+                end
+            end	
+
+end
+end  
+})
+
+window2:AddToggle({
+	text = "Auto kill NOR (Mobile)",
+	flag = "Auto",
+	callback = function(v)
+af23 = v
+_G.af23 = af23
+if af23 == true then
+    local bosspath
+     for f, g in pairs(game:GetService("ReplicatedStorage"):GetDescendants()) do
+                if g.Name == "DamageBoss" then
+                    bosspath = g
+while _G.af23 do
+bosspath:Fireserver()
+g:Fireserver()
                 wait(.5)
 end
                 end
@@ -219,7 +245,7 @@ while _G.af2 do
     if g:IsA("ProximityPrompt") then
 		        fireproximityprompt(g)
 		g.HoldDuration = 0
-        task.wait(.3)
+        task.wait(1)
 
     end
 end
@@ -229,7 +255,7 @@ end
 })
 
 window2:AddButton({
-	text = "Delete nor damage (nor level)",
+	text = "Delete nor damage (not working rn)",
     callback = function()
     workspace.Maps.WarehouseChase.MapSetup.PatrolAssets.PatrolNPCs.ChaseNor.HumanoidRootPart.CanTouch = false
     end
@@ -328,6 +354,14 @@ window:AddButton({
 loadstring(HttpGet("https://pastebin.com/raw/U0wWyYc0"))()
     end
 })
+
+window:AddButton({
+    text = "Fly WORKS",
+    callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Zynox-Dev/Zynox-Fly/refs/heads/main/Fly.lua"))()
+    end
+})
+
 
 
 window:AddSlider({
