@@ -243,10 +243,9 @@ if af2 == true then
 while _G.af2 do
 		for i,g in pairs(workspace.Maps.WarehouseChase.MapSetup:GetDescendants()) do
     if g:IsA("ProximityPrompt") then
-		        fireproximityprompt(g)
 		g.HoldDuration = 0
-        task.wait(1)
-
+        task.wait(.8)
+fireproximityprompt(g)
     end
 end
 end
