@@ -35,6 +35,12 @@ Notification:Notify(
     {OutlineColor = Color3.fromRGB(255, 255, 255),Time = 3, Type = "default"}
 )
 
+Notification:Notify(
+    {Title = "Pig 64 Script", Description = "SCRIPT IS FIXING, DONT SPAM THAT IT DOESNT WORKS"},
+    {OutlineColor = Color3.fromRGB(255, 255, 255),Time = 3, Type = "default"}
+)
+
+
 
 function esp()
 				getgenv().enabled = true --Toggle on/off
